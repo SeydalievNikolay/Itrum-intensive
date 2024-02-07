@@ -1,5 +1,8 @@
 package org.seydaliev;
 
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
+
 public class Main {
     public static void main(String[] args) {
         ConcurrentBank bank = new ConcurrentBank();
@@ -36,5 +39,11 @@ public class Main {
 
         // Вывод общего баланса
         System.out.println("Total balance: " + bank.getTotalBalance());
+
+        System.out.println();
+        System.out.println("DeadLockExample");
+
+        DeadLockExample example = new DeadLockExample();
+        example.execute();
     }
 }
